@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upwork Job Analysis</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            background: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #007bff;
+        }
+
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .controls select,
+        .controls input[type="file"],
+        .controls button {
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #f4f4f4;
+        }
+
+        .controls button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .controls button:hover {
+            background-color: #0056b3;
+        }
+
+        .job-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .job-item {
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            background: #f9f9f9;
+        }
+
+        .job-item:hover {
+            background-color: #f4f4f4;
+        }
+
+        .job-details {
+            display: none;
+            margin-top: 10px;
+            background: #f1f1f1;
+            padding: 10px;
+            border-radius: 6px;
+        }
+
+        .show-details {
+            display: block;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .job-header button {
+            padding: 6px 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .job-header button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Upwork Job Analysis</h1>
+        <div class="controls">
+            <input type="file" id="fileInput" />
+            <select id="levelFilter">
+                <option value="all">Filter by Level</option>
+            </select>
+            <select id="typeFilter">
+                <option value="all">Filter by Type</option>
+            </select>
+            <select id="skillFilter">
+                <option value="all">Filter by Skill</option>
+            </select>
+            <button id="filterButton">Apply Filters</button>
+            <button id="sortTitleAsc">Sort by Title (A-Z)</button>
+            <button id="sortTitleDesc">Sort by Title (Z-A)</button>
+            <button id="sortTimeAsc">Sort by Time (Newest First)</button>
+            <button id="sortTimeDesc">Sort by Time (Oldest First)</button>
+        </div>
+        <ul class="job-list" id="jobList"></ul>
+    </div>
+    <script src="JobAnalysis.js"></script>
+</body>
+</html>
